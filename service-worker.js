@@ -1,5 +1,12 @@
 const CACHE_NAME = 'expense-tracker-v1';
-const urlsToCache = ['/', '/index.html', '/static/js/main.chunk.js'];
+const isExpenseTracker = self.location.pathname.includes('/expense-tracker');
+const basePath = isExpenseTracker ? '/expense-tracker' : '';
+
+const urlsToCache = [
+    `${basePath}/`,
+    `${basePath}/index.html`,
+    `${basePath}/static/js/main.chunk.js`
+];
 
 self.addEventListener('install', event => {
     event.waitUntil(
@@ -8,5 +15,17 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-    event.respondWith(fetch(event.request));
+    event.respondWith(
+        caches.match(event.request).then(response => response || fetch(event.request))
+    );
+});
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        caches.keys().then(keys => {
+            return Promise.all(
+                keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+            );
+        })
+    );
 });
