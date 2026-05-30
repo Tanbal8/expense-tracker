@@ -1,0 +1,45 @@
+#expense-list {
+    width: var(--expense-list-width);
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--small-gap);
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    & > caption {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: var(--small-gap);
+    }
+    & tr {
+        display: grid;
+        grid-template-columns: repeat(5, 20%);
+    }
+    & > thead {
+        position: sticky;
+        z-index: 1;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        background-color: var(--primary-color);
+        
+        & th {
+            padding: var(--padding);
+            color: var(--background-color);
+        }
+    }
+    & > tbody {
+        & > tr.date-row{
+            grid-template-columns: 100%;
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+            & > th {
+                text-align: center;
+                padding: 0.2rem 0;
+            }
+        }
+    }
+}
+
+#no-data-found {
+    padding: calc(3 * var(--big-gap)) 0;
+    font-size: calc(2.5 * var(--font-size-big));
+    color: var(--normal-color);
+}

@@ -1,0 +1,41 @@
+#go-to-top-button {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0.2rem;
+    transition: scale 0.1s linear;
+
+    &:active {
+        scale: 0.92;
+    }
+
+    &.visible { /* Visiblity animaiton */
+        animation: go-to-top-button-visibility 0.3s ease forwards;
+    }
+
+    &:not(.visible) { /* Invisiblity animaiton */
+        animation: go-to-top-button-invisibility 0.3s ease forwards;;
+    }
+
+    & > svg {
+        padding-bottom: 2px;
+        color: white;
+    }
+}
+@keyframes go-to-top-button-visibility {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+@keyframes go-to-top-button-invisibility {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.1); }
+    100% { transform: scale(0); }
+}

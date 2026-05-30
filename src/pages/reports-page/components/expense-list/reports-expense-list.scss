@@ -1,0 +1,41 @@
+#reports-expense-list {
+    width: 90%;
+    margin: var(--small-gap) auto 0;
+    border-collapse: collapse;
+    & > caption {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: var(--small-gap);
+    }
+    & > thead {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        th {
+            background-color: var(--primary-color);
+            padding: var(--padding);
+            width: 50%;
+        }
+    }
+    & > tbody {
+        & > tr {
+            & > th, & > td {
+                padding: var(--padding);
+                text-align: center;
+            }
+            &.date-row{
+                grid-template-columns: 100%;
+                background-color: var(--secondary-color);
+                & > th {
+                    text-align: center;
+                }
+            }
+            &.date-total {
+                background-color: var(--total-row-color);
+            }
+            &:not(.date-row, .date-total) {
+                background-color: var(--normal-tr-color);
+            }
+        }
+    }
+}

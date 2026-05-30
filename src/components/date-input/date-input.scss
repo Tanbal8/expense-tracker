@@ -1,0 +1,34 @@
+.date-input {
+    // Input
+    width: 100%;
+    direction: rtl;
+    text-align: center;
+    color: var(--opposite-color);
+    &[data-can-focus=true]:focus {
+        text-decoration: underline;
+    }
+    
+    // Container
+    &-container {
+        display: flex;
+    }
+    
+    // Options
+    &-options {
+        display: flex;
+        flex-direction: column;
+        & > button {
+            width: 15px;
+            aspect-ratio: 1;
+            transition: filter 0.15s linear;
+            background-color: transparent;
+            color: var(--opposite-color);
+            &:hover {
+                filter: brightness(0.92);
+            }
+            &:active {
+                filter: brightness(0.85);
+            }
+        }
+    }
+}

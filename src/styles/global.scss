@@ -1,0 +1,11 @@
+@forward 'variables';
+@forward 'mixins';
+@use 'placeholders';
+@forward 'functions';
+
+.empty-text {
+    @extend %flex-center;
+    margin-top: var(--big-gap);
+    color: var(--normal-color);
+    font-size: var(--empty-text-font-size);
+}

@@ -1,0 +1,27 @@
+@mixin responsive($property, $sm, $md: null, $lg: null, $x-lg: null, $xx-lg: null) {
+    #{$property}: $sm;  // < 480px
+    
+    @if $md {
+        @media (min-width: 481px) { // 481px - 768px
+            #{$property}: $md;
+        }
+    }
+    
+    @if $lg {
+        @media (min-width: 769px) { // 769px - 1024px
+            #{$property}: $lg;
+        }
+    }
+    
+    @if $x-lg {
+        @media (min-width: 1025px) { // 1025px - 1449px
+            #{$property}: $x-lg;
+        }
+    }
+    
+    @if $xx-lg {
+        @media (min-width: 1440px) { // > 1440px
+            #{$property}: $xx-lg;
+        }
+    }
+}

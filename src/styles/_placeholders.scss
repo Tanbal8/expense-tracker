@@ -1,0 +1,35 @@
+@use './theme' as theme;
+
+.button {
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: filter 0.15s linear, background-color 0.15s linear, color 0.15s linear;
+    &:hover {
+        filter: brightness(0.92);
+    }
+    &-primary {
+        @extend .button;
+        background-color: var(--primary-color);
+        color: var(--background-color);
+    }
+    &-secondary {
+        @extend .button;
+        background-color: var(--secondary-color);
+        color: var(--background-color);
+    }
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

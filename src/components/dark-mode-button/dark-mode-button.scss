@@ -1,0 +1,54 @@
+#dark-mode-button {
+    position: relative;
+    cursor: pointer;
+    &-circle {
+        width: var(--dark-mode-button-size);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        transition: background-color 0.1s linear 0.05s;
+        position: relative;
+        z-index: 1;
+    }
+    &-up-layer {
+        background-color: var(--settings-menu-color);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        border-radius: 50%;
+        z-index: 1;
+        animation: dark-mode-moon 0.15s ease forwards;
+    }
+    &-sun-rays {
+        position: absolute;
+        inset: 0;
+        & > div {
+            height: var(--dark-mode-button-sun-rays-height);
+            position: absolute;
+            background-color: orange;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            animation: dark-mode-sun-rays 0.15s 0.1s linear forwards;
+        }
+    }
+
+    /* Theme mode*/
+    &[data-theme-mode=light] > &-circle {
+        background-color: orange;
+    }
+    &[data-theme-mode=dark] > &-circle {
+        background-color: #fff;
+    }
+}
+
+@keyframes dark-mode-moon {
+    0% { right: -100%; opacity: 0; }
+    40% { opacity: 0; }
+    100% { right: -40%; opacity: 1; }
+}
+
+@keyframes dark-mode-sun-rays {
+    from { width: 90%; }
+    to { width: calc(100% + var(--dark-mode-button-sun-rays-width)); }
+}

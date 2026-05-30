@@ -1,0 +1,91 @@
+@use '../../../../styles/global' as global;
+
+#add-expense-form {
+    // Form
+    $gap: 1rem;
+    $column-gap: calc(4 * var(--small-gap));
+    $horizontal-padding: 5%;
+    $items-height: 30px;
+    width: calc(100% - (2 * var(--small-gap)));
+    padding: $gap 0;
+    margin: $gap 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 0.3rem;
+    background-color: var(--add-expense-form-color);
+    border: 1px solid #aaa;
+    & > div:not(:last-child) {
+        margin-bottom: calc(3 * var(--small-gap));
+    }
+
+    // Title
+    &-title {
+        margin-left: var(--small-gap);
+        &-container {
+            @extend %flex-center;
+        }
+    }
+
+    // Inputs
+    &-inputs-container {
+        width: 100%;
+        display: grid;
+        @include global.responsive(grid-template-columns, 100%, 100%, 50% 50%, 100%, 50% 50%);
+        row-gap: calc(3 * var(--small-gap));
+        column-gap: $column-gap;
+        justify-content: center;
+        padding: 0 $horizontal-padding;
+        & > div {
+            display: flex;
+            flex-direction: column;
+            row-gap: var(--small-gap);
+            & input, & select {
+                width: 100%;
+                height: $items-height;
+                padding: 0 var(--small-gap);
+            }
+            & label {
+                font-weight: bold;
+            }
+            // Date
+            & .date-input {
+                color: #000;
+                // Options
+                &-options {
+                    background-color: #bbb;
+                    & > button {
+                        color: var(--opposite-color);
+                    }
+                }
+            }
+            // Category
+            & #add-expense-form-category {
+                &-container > div {
+                    row-gap: var(--small-gap);
+                    background-color: red;
+                }
+                &-select {
+                    border: none;
+                    background-color: #fff;
+                }
+            }
+            // New category input
+            & #add-expense-form-new-category-input {
+                margin-top: var(--small-gap);
+            }
+        }
+    }
+
+    // Add button
+    &-button {
+        @extend .button-primary;
+        width: 100%;
+        height: $items-height;
+        &-container {
+            $padding-100: 0 calc($horizontal-padding);
+            $padding-50-50: 0 calc($horizontal-padding - ($column-gap / 2));
+            @include global.responsive(padding, $padding-100, $padding-100, $padding-50-50, $padding-100, $padding-50-50);
+        }
+    }
+}

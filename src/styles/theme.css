@@ -1,0 +1,36 @@
+/* Const */
+:root {
+    --normal-color: #aaa;
+}
+
+/* Light */
+:root[data-theme-mode=light] {
+    --primary-color: #13afc5;
+    --secondary-color: #ffb813;
+    --background-color: #f5f5f5;
+    --opposite-color: #000;
+    --shadow-color: #999;
+    --total-row-color: #ffeca7;
+    --stat-card-first-color: #3b82f6;
+    --stat-card-second-color: #2255dd;
+    --normal-tr-color: #eee;
+    --add-expense-form-color: #eee;
+    --settings-menu-color: #ddd;
+    --filter-form-background-color: #dadada;
+}
+
+/* Dark */
+:root[data-theme-mode=dark] {
+    --primary-color: #1796a7;
+    --secondary-color: #ffaf25;
+    --background-color: #333;
+    --opposite-color: #fff;
+    --shadow-color: #666;
+    --total-row-color: #ffc260;
+    --stat-card-first-color: #5c9aff;
+    --stat-card-second-color: #2f63f0;
+    --normal-tr-color: #555;
+    --add-expense-form-color: #444;
+    --settings-menu-color: #777;
+    --filter-form-background-color: #999;
+}

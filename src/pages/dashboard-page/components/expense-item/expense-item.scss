@@ -1,0 +1,104 @@
+@import '../../../../styles/placeholders';
+
+.expense-item {
+    padding: var(--small-gap);
+    padding-left: 0;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    &:not(.date-row) {
+        background-color: var(--normal-tr-color);
+    }
+    & > td {
+        margin: 0 0.1rem;
+        vertical-align: middle;
+        & > input {
+            width: 100%;
+            height: 100%;
+            font-size: var(--font-size);
+            background-color: transparent;
+            text-align: center;
+            color: var(--opposite-color);
+        }
+    }
+
+    // Title
+    &-title-container {
+        padding-left: var(--small-gap);
+        & > input {
+            font-size: var(--font-size);
+        }
+    }
+    
+    // Date
+    &-date-container {
+        // Date input
+        & .date-input {
+            background-color: transparent;
+            // Container
+            &-container {
+                display: flex;
+                box-sizing: content-box;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+            // Date input options
+            &-options {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                & > button {
+                    @extend %flex-center;
+                    width: fit-content;
+                    height: fit-content;
+                }
+            }
+        }
+    }
+
+    // Category select
+    &-category {
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+        text-align: center;
+        border: none;
+        outline: none;
+        color: var(--opposite-color);
+        cursor: pointer;
+        &:disabled {
+            // Removing the arrow icon when not editing
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            cursor: default;
+            opacity: 1;
+            font-weight: 400;
+        }
+        &:focus {
+            text-decoration: underline;
+        }
+        & > option {
+            color: #000;
+        }
+    }
+    // Options
+    &-options {
+        display: flex;
+        justify-content: flex-end;
+        align-items: stretch;
+        flex-shrink: 0;
+        & > button {
+            display: flex;
+            align-items: center;
+            margin-right: var(--small-gap);
+            background-color: transparent;
+            color: var(--opposite-color);
+        }
+    }
+}

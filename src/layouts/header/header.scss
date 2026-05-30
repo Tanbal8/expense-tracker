@@ -1,0 +1,25 @@
+@use '../../styles/mixins' as mixins;
+
+#header {
+    @include mixins.responsive(flex-direction, column, null, row, null, null);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: var(--small-gap) 0 var(--small-gap) var(--small-gap);
+    background-color: var(--primary-color);
+    box-shadow: 0 0 3px #376599;
+    & > div {
+        display: flex;
+        align-items: center;
+    }
+    &-right {
+        justify-content: space-between;
+    }
+    h1 {
+        color: var(--background-color);
+        padding: 0 var(--big-gap);
+    }
+}

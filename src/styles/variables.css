@@ -1,0 +1,53 @@
+:root {
+    /* Const */
+        --padding: 0.3rem 0.6rem;
+    /* Variable */
+        --font-size: 0.7rem;
+        --font-size-big: 0.9rem;
+        --border-radius: 0.2rem;
+        --small-gap: 0.3rem;
+        --big-gap: 0.5rem;
+        --expense-list-width: 95%;
+        --dark-mode-button-size: 20px;
+        --dark-mode-button-sun-rays-width: 0.5rem;
+        --dark-mode-button-sun-rays-height: 2px;
+        --empty-text-font-size: 2rem;
+}
+@media (min-width: 481px) {
+    :root {
+        --font-size: 0.8rem;
+        --font-size-big: 1rem;
+        --small-gap: 0.35rem;
+        --big-gap: 0.52rem;
+        --empty-text-font-size: 2.2rem;
+    }
+}
+
+@media (min-width: 769px) {
+    :root {
+        --font-size: 0.9rem;
+        --font-size-big: 1.1rem;
+        --small-gap: 0.42rem;
+        --big-gap: 0.6rem;
+        --empty-text-font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    :root {
+        --font-size: 1rem;
+        --font-size-big: 1.1rem;
+        --small-ap: 0.5rem;
+        --big-gap: 0.7rem;
+        --empty-text-font-size: 3rem;
+    }
+}
+@media (min-width: 1440px) {
+    :root {
+        --font-size: 0.9rem;
+        --font-size-big: 1.1rem;
+        --small-gap: 0.42rem;
+        --big-gap: 0.6rem;
+        --expense-list-width: 90%;
+    }
+}

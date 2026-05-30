@@ -1,0 +1,57 @@
+#settings-menu {
+    // Menu
+    position: absolute;
+    top: 100%;
+    right: -0.2rem;
+    z-index: 1;
+    padding-top: var(--small-gap);
+    animation: to-scale-1 0.1s ease forwards;
+    &::after { // Invisible area for onmouseleave
+        content: "";
+        position: absolute;
+        inset: -5px -10px -10px -10px;
+        z-index: -1;
+    }
+    
+    // Menu items
+    & > li {
+        padding: 0.5rem 1rem;
+        text-wrap: nowrap;
+        background-color: var(--settings-menu-color);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        gap: var(--big-gap);
+        transition: filter 0.2s linear;
+        text-transform: capitalize;
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--normal-color);
+        }
+        &:hover {
+            filter: brightness(0.92);
+        }
+    }
+    
+    &-container {
+        position: relative;
+    }
+    
+    // Button
+    &-button {
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0.5rem;
+        // Icon
+        & > svg {
+            color: var(--background-color);
+            vertical-align: middle;
+        }
+    }
+}
+
+@keyframes to-scale-1 {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}

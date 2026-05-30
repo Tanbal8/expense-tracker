@@ -1,0 +1,11 @@
+#navigation-list {
+    display: flex;
+    & > li {
+        & > a { 
+            color: var(--background-color);
+            text-decoration: none;
+            display: inline-block;
+            padding: var(--padding);
+        }
+    }
+}

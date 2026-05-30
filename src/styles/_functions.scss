@@ -1,0 +1,8 @@
+@function grid-template($n: 1) {
+    $percent: 100% / $n;
+    $result: ();
+    @for $i from 1 through $n {
+        $result: append($result, $percent, space);
+    }
+    @return $result;
+}

@@ -1,0 +1,38 @@
+@use '../../../../styles/placeholders';
+
+#reports-list-options {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: var(--big-gap);
+    & > div {
+        display: flex;
+        justify-content: center;
+        &:not(:last-child) {
+            margin-bottom: var(--big-gap);
+        }
+    }
+
+    // Time units
+    &-time-units {
+        &-list {
+            display: flex;
+            & > li {
+                &:not(:last-child) {
+                    margin-right: var(--big-gap);
+                }
+                & > button {
+                    @extend .button;
+                    background-color: transparent;
+                    border: 2px solid var(--primary-color);
+                    color: var(--primary-color);
+                    &[data-active=true] {
+                        background-color: var(--primary-color);
+                        color: var(--background-color);
+                    }
+                }
+            }
+        }
+    }
+
+}

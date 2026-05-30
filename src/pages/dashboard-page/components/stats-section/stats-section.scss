@@ -1,0 +1,15 @@
+@use '../../../../styles/global' as global;
+
+#stats-section {
+    @include global.responsive(grid-template-columns, global.grid-template(2), global.grid-template(3), global.grid-template(3), global.grid-template(2), global.grid-template(3));
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-auto-rows: 1fr;
+    gap: var(--small-gap);
+    padding: var(--big-gap) 2% 0;
+    & > div {
+        @extend %flex-center;
+    }
+}
