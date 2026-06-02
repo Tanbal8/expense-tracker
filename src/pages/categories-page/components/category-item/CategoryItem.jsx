@@ -98,6 +98,7 @@ const CategoryItem = ({ categoryData }) => {
       <input
         type='text'
         className='category-item-input'
+        name='category-item-input'
         defaultValue={name}
         readOnly={!state.isEditing}
         ref={categoryTitleRef}

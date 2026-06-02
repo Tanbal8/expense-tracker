@@ -104,6 +104,7 @@ const SettingsMenu = () => {
                 }
                 <input
                     type='file'
+                    name='input-file'
                     accept=".json"
                     style={{display: 'none'}}
                     ref={importInputFileRef}

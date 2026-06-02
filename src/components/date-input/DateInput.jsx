@@ -31,6 +31,7 @@ const DateInput = ({
             <input
                 type='text'
                 className='date-input'
+                name='date-input'
                 value={valueCallback(activeDate)}
                 readOnly
                 data-can-focus={canFocus}

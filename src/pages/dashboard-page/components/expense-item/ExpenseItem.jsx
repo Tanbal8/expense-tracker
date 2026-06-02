@@ -174,6 +174,7 @@ const ExpenseItem = ({ expenseData }) => {
             <td className='expense-item-category-container'>
                 <select
                     className='expense-item-category'
+                    name='expense-item-category'
                     defaultValue={category}
                     disabled={!state.isEditing}
                     ref={categorySelectRef}
